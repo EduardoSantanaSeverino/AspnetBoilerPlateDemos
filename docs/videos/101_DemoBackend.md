@@ -35,9 +35,9 @@ https://aspnetboilerplate.com/
 
 Download the AspnetBoilerPlate
 Update the project to use PostgreSQL
+Migrate the PostgreSQL database
 Disable Background Jobs
 Disable SignalR Service
-Migrate the PostgreSQL database
 Create a new Entity and Add it to DBcontext
 Add the Application Service
 Check Swagger Endpoint

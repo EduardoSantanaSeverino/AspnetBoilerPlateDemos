@@ -13,7 +13,7 @@ using Abp.Castle.Logging.Log4Net;
 using Abp.Extensions;
 using MyCollegeV2.Configuration;
 using MyCollegeV2.Identity;
-using Abp.AspNetCore.SignalR.Hubs;
+// using Abp.AspNetCore.SignalR.Hubs; // TODO: This Will Disabled SignalR
 using Abp.Dependency;
 using Abp.Json;
 using Microsoft.Extensions.Hosting;
@@ -103,10 +103,10 @@ namespace MyCollegeV2.Web.Host.Startup
             app.UseAuthorization();
 
             app.UseAbpRequestLocalization();
-            
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<AbpCommonHub>("/signalr");
+                // endpoints.MapHub<AbpCommonHub>("/signalr"); // TODO: This Will Disabled SignalR
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
             });
@@ -124,7 +124,7 @@ namespace MyCollegeV2.Web.Host.Startup
                 options.DisplayRequestDuration(); // Controls the display of the request duration (in milliseconds) for "Try it out" requests.  
             }); // URL: /swagger
         }
-        
+
         private void ConfigureSwagger(IServiceCollection services)
         {
             services.AddSwaggerGen(options =>

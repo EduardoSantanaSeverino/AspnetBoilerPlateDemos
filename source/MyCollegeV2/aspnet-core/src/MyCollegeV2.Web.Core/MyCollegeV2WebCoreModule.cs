@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
-using Abp.AspNetCore.SignalR;
+// using Abp.AspNetCore.SignalR; // TODO: This Will Disabled SignalR
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.Configuration;
@@ -20,7 +20,7 @@ namespace MyCollegeV2
          typeof(MyCollegeV2ApplicationModule),
          typeof(MyCollegeV2EntityFrameworkModule),
          typeof(AbpAspNetCoreModule)
-        ,typeof(AbpAspNetCoreSignalRModule)
+        // , typeof(AbpAspNetCoreSignalRModule) // TODO: This Will Disabled SignalR
      )]
     public class MyCollegeV2WebCoreModule : AbpModule
     {

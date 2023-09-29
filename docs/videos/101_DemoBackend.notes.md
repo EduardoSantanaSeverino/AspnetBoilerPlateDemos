@@ -36,9 +36,26 @@ and I can see the new entity.
 - Update the project to use PostgreSQL
   - go to entity framework folder:
   - dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.11
-- Disable Background Jobs
-- Disable SignalR Service
+  - Delete Microsoft.EntityFrameworkCore.SqlServer from \*.EntityFrameworkCore project because it will not be used anymore.
+  - replace the content of the file: DbContextConfigurer
+  - update the UseSqlServer with UseNpgsql
+  - add the AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true); to the Start Up
+  - add the OnModelCreating to the datacontext and add the reference.
+  - Also add those to the context contructor:
+    - System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+    - System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 - Migrate the PostgreSQL database
+  - Remove all migration files under /\*.EntityFrameworkCore/Migrations folder. (include DbContextModelSnapshot)
+  - dotnet ef migrations add InitialMigration -> this goes under EntityFramework project.
+  - dotnet ef database update > this goes under EntityFramework project.
+- Disable Background Jobs
+  - to disable those you only need to add the line to the Module of your host app:
+  - public override void PreInitialize()
+  - {
+  -     Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
+  - }
+- Disable SignalR Service
+  - SignalR is used by several features like Chat and Real Time Notifications. You need to comment out those features (their html contents in your app). You also need to comment out SignalR in Startup.cs and client side SignalRHelper.ts. also remove the nuget package.
 - Create a new Entity and Add it to DBcontext
 - Add the Application Service
 - Check Swagger Endpoint
@@ -51,3 +68,6 @@ and I can see the new entity.
 - https://aspnetboilerplate.com/Pages/Documents/EF-Core-Oracle-Integration
 - https://aspnetboilerplate.com/Pages/Documents/EF-Core-PostgreSql-Integration
 - https://aspnetboilerplate.com/Pages/Documents/Background-Jobs-And-Workers
+- https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations#opting-out-of-the-new-timestamp-mapping-logic
+- https://aspnetboilerplate.com/Pages/Documents/SignalR-AspNetCore-Integration
+- https://support.aspnetzero.com/QA/Questions/10869/Disable-SignalR

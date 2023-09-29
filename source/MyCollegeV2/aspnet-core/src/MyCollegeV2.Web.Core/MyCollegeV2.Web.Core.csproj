@@ -27,6 +27,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Abp.AspNetCore" Version="8.1.0" />
     <PackageReference Include="Abp.ZeroCore" Version="8.1.0" />
-    <PackageReference Include="Abp.AspNetCore.SignalR" Version="8.1.0" />
+    <!-- BEGIN - // TODO: This Will Disabled SignalR -->
+    <!-- <PackageReference Include="Abp.AspNetCore.SignalR" Version="8.1.0" /> -->
+    <!-- END - // TODO: This Will Disabled SignalR -->
   </ItemGroup>
 </Project>

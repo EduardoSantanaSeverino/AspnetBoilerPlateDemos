@@ -8,7 +8,7 @@ namespace MyCollegeV2.Web.Host.Startup
 {
     [DependsOn(
        typeof(MyCollegeV2WebCoreModule))]
-    public class MyCollegeV2WebHostModule: AbpModule
+    public class MyCollegeV2WebHostModule : AbpModule
     {
         private readonly IWebHostEnvironment _env;
         private readonly IConfigurationRoot _appConfiguration;
@@ -17,6 +17,14 @@ namespace MyCollegeV2.Web.Host.Startup
         {
             _env = env;
             _appConfiguration = env.GetAppConfiguration();
+        }
+
+        public override void PreInitialize()
+        {
+            Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
+            System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+            System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            // https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations
         }
 
         public override void Initialize()
