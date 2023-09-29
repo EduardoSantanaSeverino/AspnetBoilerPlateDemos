@@ -59,7 +59,9 @@ and I can see the new entity.
   1. we disabled on the dotnet project on the startup class and module.
   2. on the angular on the init project.
 - Create a new Entity and Add it to DBcontext
+  let s show in the screen the entity model to be created.
 - Add the Application Service
+  we will
 - Check Swagger Endpoint
 - Test the CRUD functionality
 
