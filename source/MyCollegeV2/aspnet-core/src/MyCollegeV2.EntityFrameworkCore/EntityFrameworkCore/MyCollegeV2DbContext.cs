@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Abp.Zero.EntityFrameworkCore;
 using MyCollegeV2.Authorization.Roles;
 using MyCollegeV2.Authorization.Users;
 using MyCollegeV2.MultiTenancy;
+using MyCollegeV2.Models;
+///DbContext.cs.place1///
 
 namespace MyCollegeV2.EntityFrameworkCore
 {
@@ -25,5 +27,8 @@ namespace MyCollegeV2.EntityFrameworkCore
                 .Property(p => p.Value)
                 .HasMaxLength(100); // any integer that is smaller than 10485760
         }
+        public virtual DbSet<Student> Students { get; set; }
+///DbContext.cs.place2///
     }
 }
+
