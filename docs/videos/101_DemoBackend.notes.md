@@ -35,13 +35,13 @@ and I can see the new entity.
 - Download the AspnetBoilerPlate
 - Update the project to use PostgreSQL
   - go to entity framework folder:
-  - dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.11
+  - dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.3
   - Delete Microsoft.EntityFrameworkCore.SqlServer from \*.EntityFrameworkCore project because it will not be used anymore.
   - replace the content of the file: DbContextConfigurer
   - update the UseSqlServer with UseNpgsql
   - add the AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true); to the Start Up
   - add the OnModelCreating to the datacontext and add the reference.
-  - Also add those to the context contructor:
+  - Also add those to the context constructor:
     - System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
     - System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 - Migrate the PostgreSQL database
@@ -56,6 +56,8 @@ and I can see the new entity.
   - }
 - Disable SignalR Service
   - SignalR is used by several features like Chat and Real Time Notifications. You need to comment out those features (their html contents in your app). You also need to comment out SignalR in Startup.cs and client side SignalRHelper.ts. also remove the nuget package.
+  1. we disabled on the dotnet project on the startup class and module.
+  2. on the angular on the init project.
 - Create a new Entity and Add it to DBcontext
 - Add the Application Service
 - Check Swagger Endpoint
