@@ -3,8 +3,37 @@ theme: gaia
 _class: lead
 paginate: true
 backgroundColor: #fff
-backgroundImage: url('https://marp.app/assets/hero-background.svg')
+backgroundImage: url('https://aspnetboilerplate.com/img/backgrounds/6.jpg')
 marp: true
+---
+
+# **Talking About**
+
+1. Who is this framework for? Does it work for you?
+2. Important framework features for you.
+
+---
+
+# **Best Practices**
+
+- Solid Principles
+- Domain Driven Design
+- Layer Architecture
+
+---
+
+# **Students/New Programmers**
+
+- Struggle to create the new application.
+- Let's Make it simple with AspnetBoilerPlate template.
+- Avoid repetitive code.
+
+---
+
+# **Rapid Application Development**
+
+A top of the line dotnet rapid application framework to help you to your boost productivity and save time on delivering your next dotnet web application.
+
 ---
 
 # **AspnetBoilerPlate**
@@ -18,21 +47,27 @@ https://aspnetboilerplate.com/
 # Quick View
 
 - Quick Google search . . .
+- https://www.google.com/search?q=AspnetBoilerPlate&rlz=1C5MACD_enCA1046CA1046&oq=AspnetBoilerPlate&aqs=chrome..69i57j69i59j69i65j69i60l3j69i65l2.1460j0j1&sourceid=chrome&ie=UTF-8#ip=1
 - https://www.youtube.com/watch?v=fboRUsd00N8&list=PLEqIq664dDRZ1ObTGKwkwUrrj5mT4pmv2
 - https://www.youtube.com/watch?v=4hIh8FUlTA0&list=PLsNclT2aHJcM6nvhvvijXI_WdUXPvgf28
 
 ---
 
-# Who is this for? On the Backend?
+# Who is this for? On the Backend? - 1
 
 - Rapid Application development and familiar with C# and Dotnet as a Backend.
 - Version 8 with:
   - Net 7
   - Entity Framework 7 - (https://learn.microsoft.com/en-us/ef/core/providers)
     - Azure SQL, SQLite, Memory DB, Cosmos DB, PostgreSQL, MySQL, Oracle.
-  - Automapper 12 for Automatic Dto mappings.
-  - It is Migrated away from Castle Windsor.
-  - Domain Driven Design and best practices, like SOLID and others --> later will talk about features.
+
+---
+
+# Who is this for? On the Backend? - 2
+
+- Automapper 12 for Automatic Dto mappings.
+- It is Migrated away from Castle Windsor.
+- Domain Driven Design and best practices, like SOLID and others --> later will talk about features.
 
 ---
 
@@ -61,3 +96,17 @@ https://aspnetboilerplate.com/
 # Thank you
 
 - Like & Subscribe
+- Next videos:
+  - Frontend Intro and Features.
+  - Hangs On Backend using PostgreSQL, Swagger, EntityFramework.
+  - Hangs On Frontend Angular and the Student Entity.
+  - Automatically Generating the Backend and Frontend code.
+
+---
+
+# Links
+
+- https://www.google.com/search?q=AspnetBoilerPlate&rlz=1C5MACD_enCA1046CA1046&oq=AspnetBoilerPlate&aqs=chrome..69i57j69i59j69i65j69i60l3j69i65l2.1460j0j1&sourceid=chrome&ie=UTF-8#ip=1
+- https://www.youtube.com/watch?v=fboRUsd00N8&list=PLEqIq664dDRZ1ObTGKwkwUrrj5mT4pmv2
+- https://www.youtube.com/watch?v=4hIh8FUlTA0&list=PLsNclT2aHJcM6nvhvvijXI_WdUXPvgf28
+- https://aspnetboilerplate.com/Pages/Documents/Introduction

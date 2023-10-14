@@ -1,6 +1,37 @@
+Part 1 - The Brief
+
+In this video I am gonna share with you a brief instruction to a top of the line dotnet rapid application framework to help you to your boost productivity and save time on delivering your next dotnet web application. Also, keep in mind this is going to be a super simple introduction video where you will get a clear idea to decide if this is best for you.
+
+Part 2 - The Intro Who Am I?
+
+Hey, this is Eduardo Santana here, bit about myself, I have been doing software development for many years now, and also, as professor I get to see how many students struggling to create their new web applications. I see how new programmers trying to put so much time creating repetitive code that you will have do over and over in every new web application.
+
+And because of this, I wanted to created a series of videos that will give you a clear path for creating your new dotnet web application but using the AspnetBoilerPlate framework.
+
+First we are going to talk about who is framework for? does it work for you? and secondly we are talking about some most important time saving features that this framework is offering you.
+
+Part 3 - Content?
+Deliver the Content or presentation
+
+Part 4 - Optional Bonus
+Over-deliver
+
+Party 5 - Call to Action
+What they are going to do next?
+After this video there will be a coming video about the demonstration on how to create your new project using this framework.
+And also, how automatically generate some boiler plate. so stick around and If you finding value in this video, give it a thumbs-up. It really makes a huge difference.
+
 # **AspnetBoilerPlate**
 
-Welcome everyone, today we are going to talk about AspnetBoilerPlate,
+Welcome everyone, this is an introduction video to talk about what is AspnetBoilerPlate, who is it for
+
+and this video is for someone who is new to AspnetBoilerPlate, just introduction to the framework.
+
+Let get into it.
+
+---
+
+AspnetBoilerPlate
 
 It is an Open source and well really well-documented application framework.
 
@@ -18,13 +49,13 @@ https://aspnetboilerplate.com/
 
 And I wanted to introduce some of the best youtube video tutorials that I have found so far.
 
-We can see there from: Lee Richardson.
+We can see there from: Lee Richardson some very good demonstration videos. on me tab 2 and 3.
 
 So, moving on, lets talk about who is this for, is this framework for you?
 
 ---
 
-# Who is this for? On the Backend?
+# Who is this for? On the Backend? - 1
 
 - This Framework AspnetBoilerPlate is for someone who is looking for a Rapid Application Development and for someone who is well familiar with C# programming language and Dotnet framework for the Backend for those a rest APIs that you need for your application.
 - We can see that we are currently in the version 8 of the AspnetBoilerPlate at this very moment.. This version number 8 is using:
@@ -36,9 +67,15 @@ So, moving on, lets talk about who is this for, is this framework for you?
     - Azure SQL, SQLite, Memory DB, Cosmos DB, PostgreSQL, MySQL, Oracle, and some many others, you see the link there with more details about.
       Meaning that you can use this AspnetBoilerPlate with any database of those mentioned before. as long as the entity framework supports it, then aspnetboilerplate supports it.
 
-  - This version 8 is using Automapper 12 for Automatic Dto mappings.
-  - Quick note: a AspnetBoilerPlate a couple of years ago was migrated away from Castle Windsor as Dependency Injection framework. You remember that Castle Windsor was very popular Dependency Injection framework back in the days. It is not longer any more in AspnetBoilerPlate. Moving on.
-  - It is following Domain Driven Design for an organized application, also following only the best practices for Object Oriented Design principles and of course using SOLID principles as well.
+Let's move on the next slide
+
+---
+
+# Who is this for? On the Backend? - 2
+
+- This version 8 is using Automapper 12 for Automatic Dto mappings.
+- Quick note: a AspnetBoilerPlate a couple of years ago was migrated away from Castle Windsor as Dependency Injection framework. You remember that Castle Windsor was very popular Dependency Injection framework back in the days. It is not longer any more in AspnetBoilerPlate. Moving on.
+- It is following Domain Driven Design for an organized application, also following only the best practices for Object Oriented Design principles and of course using SOLID principles as well.
 
 Moving, lets talk about features for the backend.
 
@@ -80,9 +117,11 @@ So, moving on, lets talk about one example of the documentation.
 
 Very important to mention that AspnetBoilerPlate it has an amazing documentation on its website and the guys at AspnetBoilerPlate, they make a very good job when it comes to keep it updated, also the community. there is a very big community out there writing documentation for this framework.
 
-Let see this website:
+Let see this website: click the link:
 
 https://aspnetboilerplate.com/Pages/Documents/Introduction
+
+and change camera angle.
 
 We can see this a quick sample application with the task entity model.
 
@@ -100,10 +139,30 @@ And again all of this is using Unit Of Work.
 
 Let's Scroll down a little bit here. . .
 
-But I just want to conclude here, and invite you to download the demo template and try it yourself.
+where we can see one by one some of the features on the template and you can click and go one by one to learn more.
 
-Moving on,
+For example lets click on repository.
 
-So, that is going to be all for this video, the next video will be about the Front End.
+We can see with details some documentation on how to use the default repositories.
+
+Let's change camera again.
+
+And move on the next slide.
+
+So, I just want to conclude here, and invite you to download the demo template and try it yourself.
+
+and that is going to be all for this video. thank you.
+
+also stay tune because the next video will be about the Instruction for the Front End using this template.
 
 Subscribe to the a notification for next video.
+
+---
+
+# Links
+
+- https://www.google.com/search?q=AspnetBoilerPlate&rlz=1C5MACD_enCA1046CA1046&oq=AspnetBoilerPlate&aqs=chrome..69i57j69i59j69i65j69i60l3j69i65l2.1460j0j1&sourceid=chrome&ie=UTF-8#ip=1
+- https://www.youtube.com/watch?v=fboRUsd00N8&list=PLEqIq664dDRZ1ObTGKwkwUrrj5mT4pmv2
+- https://www.youtube.com/watch?v=4hIh8FUlTA0&list=PLsNclT2aHJcM6nvhvvijXI_WdUXPvgf28
+
+If you finding value in this video, give it a thumbs-up. It really makes a huge difference.
