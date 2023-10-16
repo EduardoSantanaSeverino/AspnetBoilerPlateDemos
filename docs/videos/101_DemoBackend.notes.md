@@ -1,3 +1,9 @@
+In this video I am gonna share with you a quick demo for the backend APIs using C#, Entity Framework PostgreSQL and AspnetBoilerplate.
+
+In the past video we looked at the APIs and Backend side of the framework. in the contrary, This time I am going to be talking about more about Angular that the frontend implementation.
+
+Hey, this is Eduardo Santana here, I have been doing software development for many years now, and I wanted to create this series of videos to help you, if you are a student or a new software developer, who is looking to create a new web application and you want to follow a clear path to follow the best practices of object oriented programming.
+
 # **AspnetBoilerPlate**
 
 Welcome everyone, today we are going to talk about AspnetBoilerPlate,

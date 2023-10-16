@@ -7,7 +7,7 @@ backgroundImage: url('https://aspnetboilerplate.com/img/backgrounds/6.jpg')
 marp: true
 ---
 
-# **Frontend**
+# Frontend
 
 Angular or Vue.js or React
 
@@ -15,7 +15,7 @@ https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular?sear
 
 ---
 
-# **Students/New Programmers**
+# Students/New Programmers
 
 - Struggle to create the new application.
 - Let's Make it simple with AspnetBoilerPlate template.
@@ -23,7 +23,7 @@ https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular?sear
 
 ---
 
-# **Best Practices**
+# Best Practices
 
 - Solid Principles
 - Domain Driven Design
@@ -31,7 +31,7 @@ https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular?sear
 
 ---
 
-# **Talking About**
+# Talking About
 
 1. Who is this framework for? Does it work for you?
 2. Important framework features for you (Frontend).
