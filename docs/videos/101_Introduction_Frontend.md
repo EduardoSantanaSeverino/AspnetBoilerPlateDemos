@@ -9,41 +9,19 @@ marp: true
 
 # Frontend
 
-Angular or Vue.js or React
+Angular or AngularJS
 
-https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular?searchKey=angular
-
----
-
-# Students/New Programmers
-
-- Struggle to create the new application.
-- Let's Make it simple with AspnetBoilerPlate template.
-- Avoid repetitive code.
-
----
-
-# Best Practices
-
-- Solid Principles
-- Domain Driven Design
-- Layer Architecture
-
----
-
-# Talking About
-
-1. Who is this framework for? Does it work for you?
-2. Important framework features for you (Frontend).
+https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular
 
 ---
 
 # Who is this for? On the Frontend?
 
-- Familiar with Angular or Vue.js or React
+- Familiar with Angular or AngularJS
+- Download: https://aspnetboilerplate.com/Templates
 - Version 8 with:
   - Angular15+
-  - NSwag 13 (https://github.com/RicoSuter/NSwag)
+  - NSwag 13: https://github.com/RicoSuter/NSwag
   - TypeScript 4.8
   - Jasmine 4.5
 
@@ -58,7 +36,7 @@ https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular?sear
 
 ---
 
-# Why do we need NSwag?... brief about JavaScript application
+# Why do we need NSwag? in JavaScript
 
 ![bg 90%](why_do_we_need_nswag_1.png)
 
@@ -70,17 +48,27 @@ https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular?sear
 
 ---
 
+# Frontend Example
+
+Example: https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular
+
+---
+
 # Thank you
 
-- Like & Subscribe
 - Next videos:
   - Hangs On Backend using PostgreSQL, Swagger, EntityFramework.
   - Hangs On Frontend Angular and the Student Entity.
   - Automatically Generating the Backend and Frontend code.
+- Like & Subscribe
 
 ---
 
 # Links
 
-- https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular?searchKey=angular
+- https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular
+- https://aspnetboilerplate.com/Templates
+- https://github.com/angular/angular/releases/tag/15.2.10
 - https://github.com/RicoSuter/NSwag
+- https://github.com/microsoft/TypeScript/releases/tag/v4.8.4
+- https://github.com/jasmine/jasmine/releases/tag/v4.5.0
