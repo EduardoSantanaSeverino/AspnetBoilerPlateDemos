@@ -7,6 +7,14 @@ backgroundImage: url('https://aspnetboilerplate.com/img/backgrounds/6.jpg')
 marp: true
 ---
 
+# AspnetBoilerPlate
+
+Open source and well-documented application framework. It's not just a framework, it also provides a strong architectural model based on Domain Driven Design, with all the best practices in mind.
+
+https://aspnetboilerplate.com/
+
+---
+
 # **Talking About**
 
 1. Who is this framework for? Does it work for you?
@@ -53,13 +61,14 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Who is this for? On the Backend? - 1**
+# Who is this for? On the Backend?
 
-- Rapid Application development and familiar with C# and Dotnet as a Backend.
+- Familiar with C# and Dotnet as a Backend.
 - Version 8 with:
   - Net 7
-  - Entity Framework 7 - (https://learn.microsoft.com/en-us/ef/core/providers)
-    - Azure SQL, SQLite, Memory DB, Cosmos DB, PostgreSQL, MySQL, Oracle.
+  - Entity Framework 7
+  - Automapper 12
+  - Domain Driven Design
 
 ---
 
