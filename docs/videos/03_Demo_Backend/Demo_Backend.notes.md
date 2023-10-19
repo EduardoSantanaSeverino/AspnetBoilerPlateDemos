@@ -17,10 +17,10 @@ In this video I am gonna share with you a quick demonstration for ASP.NET Boiler
 
 In the previous video we've been talking about ASP.NET Boilerplate. We talked about:
 
-- Who is this for? On the Backend?
-- Features? On the Backend?
-- Who is this for? On the Frontend?
-- Features? On the Frontend?
+- On the Backend, who is this for?
+- Features on the Backend.
+- On the Frontend, who is this for?
+- Features on the Frontend.
 - Why do you need NSwag?
 
 If you have not watch those videos, I strongly suggest you to go over and watch those, so you get a better idea of what we are doing in this video.

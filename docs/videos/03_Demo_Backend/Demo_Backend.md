@@ -17,10 +17,10 @@ https://aspnetboilerplate.com/
 
 # Previous Introduction Video
 
-- Who is this for? On the Backend?
-- Features? On the Backend?
-- Who is this for? On the Frontend?
-- Features? On the Frontend?
+- On the Backend, who is this for?
+- Features on the Backend.
+- On the Frontend, who is this for?
+- Features on the Frontend.
 - Why do you need NSwag?
 
 ---
@@ -30,9 +30,8 @@ https://aspnetboilerplate.com/
 - MS SQL Server or PostgreSQL
 - EntityFramework
 - Swagger
-- C# Class, Interface, Inheritance, DI
+- C# Class, Interface, Inheritance, Dependency Injection
 - Docker Container
-- No going through each file in the template
 
 ---
 
@@ -120,7 +119,7 @@ https://aspnetboilerplate.com/
 - Disable Background Jobs:
 
   To disable those you only need to add the line to the Module of your host app:
-  public override void PreInitialize()
+  `public override void PreInitialize()`
 
   ```csharp
   {
