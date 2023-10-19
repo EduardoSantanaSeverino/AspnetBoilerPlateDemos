@@ -1,6 +1,6 @@
 Part 1 - The Brief
 
-In this video I am gonna share with you a brief instruction to a top of the line dotnet rapid application framework to help you to your boost productivity and save time on delivering your next dotnet web application. Also, keep in mind this is going to be a super simple introduction video where you will get a clear idea to decide if this is best for you.
+In this video I am gonna share with you a brief introduction to a top of the line dotnet rapid application framework to help you to your boost productivity and save time on delivering your next dotnet web application. Also, keep in mind this is going to be a super simple introduction video where you will get a clear idea to decide if this is best for you.
 
 Part 2 - The Intro Who Am I?
 

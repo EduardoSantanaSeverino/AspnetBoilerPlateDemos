@@ -1,75 +1,179 @@
-In this video I am gonna share with you a quick demo for the backend APIs using C#, Entity Framework PostgreSQL and AspnetBoilerplate.
+---
+theme: gaia
+_class: lead
+paginate: true
+backgroundColor: #fff
+backgroundImage: url('https://aspnetboilerplate.com/img/backgrounds/6.jpg')
+marp: true
+---
 
-In the past video we looked at the APIs and Backend side of the framework. in the contrary, This time I am going to be talking about more about Angular that the frontend implementation.
+# Demo Backend
 
-Hey, this is Eduardo Santana here, I have been doing software development for many years now, and I wanted to create this series of videos to help you, if you are a student or a new software developer, who is looking to create a new web application and you want to follow a clear path to follow the best practices of object oriented programming.
-
-# **AspnetBoilerPlate**
-
-Welcome everyone, today we are going to talk about AspnetBoilerPlate,
-
-We are going to do a quick demo for the backend APIs using C# , Entity Framework and Application Service.
+In this video I am gonna share with you a quick demonstration for ASP.NET Boilerplate using PostgreSQL, C#, Entity Framework Swagger API.
 
 ---
 
 # Previous Introduction Video
 
-It should be already published another video where I go on:
+In the previous video we've been talking about ASP.NET Boilerplate. We talked about:
 
-- Who is this for? On the Backend and the Frontend.
-- Quick features Features that you can find On the Backend and Frontend.
-- Link in the video description.
+- Who is this for? On the Backend?
+- Features? On the Backend?
+- Who is this for? On the Frontend?
+- Features? On the Frontend?
+- Why do you need NSwag?
+
+If you have not watch those videos, I strongly suggest you to go over and watch those, so you get a better idea of what we are doing in this video.
+
+Moving on. when it comes to the technologies, it is important that we set the grounds.
 
 ---
 
-# Quick Overview
+# Technology / Topics
 
-- Quick overview, let s have a quick look at what we are doing, this is the application running Demo of the backend api and swagger application.
+For you to follow along it is better that you are familiar with the following technologies, but it is not a requirement, because I am going be explaining what you need to follow along.
 
-Here you have my Rider IDE, I can click on the solution explorer, and see the different projects. Remember this is Domain Driven Design.
+- MS SQL Server or PostgreSQL
+- EntityFramework
+- Swagger
+- C# Class, Interface, Inheritance, DI
+- Docker Container
+- No going through each file in the template
 
-Let's see the entity model that I just created for this demo. You can see the Student entity class.
+---
 
-After, let's try to run the application, where I can see the swagger application.
+# What are we doing? - 1
 
-and I can see the new entity.
+We are following the next steps, for:
 
-- ***
+1. Start the PostgreSQL container
+2. Quick Overview of the Backend
+3. Download the ASP.NET Boilerplate
+4. Update the project to use PostgreSQL
+5. Migrate the PostgreSQL database
+6. Disable Background Jobs
 
-# What are we doing?
+---
 
-- Download the AspnetBoilerPlate
-- Update the project to use PostgreSQL
-  - go to entity framework folder:
-  - dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.3
-  - Delete Microsoft.EntityFrameworkCore.SqlServer from \*.EntityFrameworkCore project because it will not be used anymore.
-  - replace the content of the file: DbContextConfigurer
-  - update the UseSqlServer with UseNpgsql
-  - add the AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true); to the Start Up
-  - add the OnModelCreating to the datacontext and add the reference.
+# What are we doing? - 2
+
+7. Disable SignalR Service
+8. Create a new Entity and Add it to DBcontext
+9. Add the Application Service
+10. Check Swagger Endpoint
+11. Test the CRUD functionality
+
+---
+
+# Follow Step 1:
+
+- Start the PostgreSQL container:
+
+  - Show the `scripts/db/docker-compose.yml` file.
+  - Start the `docker-compose` file.
+  - show docker container.
+
+---
+
+# Follow Step 2:
+
+- Quick Overview of the Backend project.
+  Quick overview, let s have a quick look at what we are doing, this is the application running Demo of the backend api and swagger application.
+  Here you have my Rider IDE, I can click on the solution explorer, and see the different projects. Remember this is Domain Driven Design.
+  Let's see the entity model that I just created for this demo. You can see the Student entity class.
+  After, let's try to run the application, where I can see the swagger application.
+  and I can see the new entity.
+
+---
+
+# Follow Step 3:
+
+- Download the AspnetBoilerPlate:
+
+  - Go to `https://aspnetboilerplate.com/Templates`.
+  - Add your project name, mine is: `MyCollegeV1`.
+  - Click on Create my project to download.
+
+---
+
+# Follow Step 4:
+
+- Update the project to use PostgreSQL:
+
+  - Go to entity framework folder, `cd source/MyCollegeV1/aspnet-core/src/MyCollegeV1.EntityFrameworkCore`.
+  - Run command: `dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.3`.
+  - Delete `Microsoft.EntityFrameworkCore.SqlServer` from `*.EntityFrameworkCore` project, because it will not be used anymore.
+  - Replace the content of the file: `DbContextConfigurer`.
+  - Update the `UseSqlServer` with `UseNpgsql` in file `source/MyCollegeV1/aspnet-core/src/MyCollegeV1.EntityFrameworkCore/EntityFrameworkCore/MyCollegeV1DbContextConfigurer.cs`.
+  - Add the `AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true)`; to the Start Up.
+  - Add the `OnModelCreating` to the datacontext and add reference to top of the file.
   - Also add those to the context constructor:
-    - System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
-    - System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-- Migrate the PostgreSQL database
-  - Remove all migration files under /\*.EntityFrameworkCore/Migrations folder. (include DbContextModelSnapshot)
-  - dotnet ef migrations add InitialMigration -> this goes under EntityFramework project.
-  - dotnet ef database update > this goes under EntityFramework project.
-- Disable Background Jobs
-  - to disable those you only need to add the line to the Module of your host app:
-  - public override void PreInitialize()
-  - {
-  -     Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
-  - }
-- Disable SignalR Service
-  - SignalR is used by several features like Chat and Real Time Notifications. You need to comment out those features (their html contents in your app). You also need to comment out SignalR in Startup.cs and client side SignalRHelper.ts. also remove the nuget package.
-  1. we disabled on the dotnet project on the startup class and module.
-  2. on the angular on the init project.
-- Create a new Entity and Add it to DBcontext
-  let s show in the screen the entity model to be created.
-- Add the Application Service
-  we will
-- Check Swagger Endpoint
-- Test the CRUD functionality
+    - `System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);`.
+    - `System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);`.
+
+---
+
+# Follow Step 5:
+
+- Migrate the PostgreSQL database:
+
+  - Remove all migration files under `/\*.EntityFrameworkCore/Migrations` folder. (include `DbContextModelSnapshot`).
+  - `dotnet ef migrations add InitialMigration` -> this goes under EntityFramework project.
+  - `dotnet ef database update` -> this goes under EntityFramework project.
+
+---
+
+# Follow Step 6:
+
+- Disable Background Jobs:
+
+  To disable those you only need to add the line to the Module of your host app:
+  public override void PreInitialize()
+
+  ```csharp
+  {
+      Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
+  }
+  ```
+
+---
+
+# Follow Step 7:
+
+- Disable SignalR Service:
+
+  SignalR is used by several features like Chat and Real Time Notifications.
+  You need to comment out those features (their `html` contents in your app).
+  You also need to comment out `SignalR` in `Startup.cs` and client side `SignalRHelper.ts`.
+  Remove the nuget package.
+
+  1. We disabled on the dotnet project on the startup class and module.
+  2. On the angular on the init project.
+
+---
+
+# Follow Step 8:
+
+- Create a new Entity and Add it to DBcontext:
+  - Let s show in the screen the entity model to be created.
+
+---
+
+# Follow Step 9:
+
+- Add the Application Service:
+
+---
+
+# Follow Step 10:
+
+- Check Swagger Endpoint:
+
+---
+
+# Follow Step 11:
+
+- Test the CRUD functionality:
 
 ---
 
