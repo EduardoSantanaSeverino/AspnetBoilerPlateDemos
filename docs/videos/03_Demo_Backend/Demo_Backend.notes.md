@@ -117,7 +117,7 @@ We are following the next steps, for:
 
 - Migrate the PostgreSQL database:
 
-  - Remove all migration files under `/\*.EntityFrameworkCore/Migrations` folder. (include `DbContextModelSnapshot`).
+  - Remove all migration files under `/*.EntityFrameworkCore/Migrations` folder. (include `DbContextModelSnapshot`).
   - `dotnet ef migrations add InitialMigration` -> this goes under EntityFramework project.
   - `dotnet ef database update` -> this goes under EntityFramework project.
 

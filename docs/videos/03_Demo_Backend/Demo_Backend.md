@@ -35,7 +35,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# What are we doing? - 1
+# What are we doing?
 
 1. Start the PostgreSQL container
 2. Quick Overview of the Backend
@@ -46,7 +46,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# What are we doing? - 2
+# What are we doing? - Continue...
 
 7. Disable SignalR Service
 8. Create a new Entity and Add it to DBcontext
@@ -69,11 +69,8 @@ https://aspnetboilerplate.com/
 # Follow Step 2:
 
 - Quick Overview of the Backend project.
-  Quick overview, let s have a quick look at what we are doing, this is the application running Demo of the backend api and swagger application.
-  Here you have my Rider IDE, I can click on the solution explorer, and see the different projects. Remember this is Domain Driven Design.
-  Let's see the entity model that I just created for this demo. You can see the Student entity class.
-  After, let's try to run the application, where I can see the swagger application.
-  and I can see the new entity.
+
+Outcome preview: `MyCollegeV1` vs `MyCollegeV2`.
 
 ---
 
@@ -91,8 +88,8 @@ https://aspnetboilerplate.com/
 
 - Update the project to use PostgreSQL:
 
-  - Go to entity framework folder, `cd source/MyCollegeV1/aspnet-core/src/MyCollegeV1.EntityFrameworkCore`.
-  - Run command: `dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.3`.
+  - Go to entity framework folder, `cd source/MyCollegeV1/aspnet-core/src/MyCollegeV1.EntityFrameworkCore`
+  - Run command: `dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.3`
   - Delete `Microsoft.EntityFrameworkCore.SqlServer` from `*.EntityFrameworkCore` project, because it will not be used anymore.
   - Replace the content of the file: `DbContextConfigurer`.
   - Update the `UseSqlServer` with `UseNpgsql` in file `source/MyCollegeV1/aspnet-core/src/MyCollegeV1.EntityFrameworkCore/EntityFrameworkCore/MyCollegeV1DbContextConfigurer.cs`.
@@ -108,7 +105,7 @@ https://aspnetboilerplate.com/
 
 - Migrate the PostgreSQL database:
 
-  - Remove all migration files under `/\*.EntityFrameworkCore/Migrations` folder. (include `DbContextModelSnapshot`).
+  - Remove all migration files under `/*.EntityFrameworkCore/Migrations` folder. (include `DbContextModelSnapshot`).
   - `dotnet ef migrations add InitialMigration` -> this goes under EntityFramework project.
   - `dotnet ef database update` -> this goes under EntityFramework project.
 
