@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  GITHUB_REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+
 jobs:
 
   build-test-deploy:
@@ -25,4 +28,4 @@ jobs:
           target_branch: gh-pages
           build_dir: docs/videos
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ env.GITHUB_REPO_TOKEN }}
