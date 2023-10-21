@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-      - run: cp README.md docs/videos/index.html
+      - run: cp README.md docs/videos/index.md
       - run: cp README.md docs/videos/README.md
       - run: npx @marp-team/marp-cli@3.3.1 docs/videos/01_Intro_Backend/Intro_Backend.md -o docs/videos/01_Intro_Backend/index.html
       - run: npx @marp-team/marp-cli@3.3.1 docs/videos/02_Intro_Frontend/Intro_Frontend.md -o docs/videos/02_Intro_Frontend/index.html
