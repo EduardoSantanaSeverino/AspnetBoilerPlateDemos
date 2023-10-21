@@ -57,8 +57,8 @@ Example: https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Ang
 # Thank you
 
 - Next videos:
-  - Hangs On Backend using PostgreSQL, Swagger, EntityFramework.
-  - Hangs On Frontend Angular and the Student Entity.
+  - Hands On Backend using PostgreSQL, Swagger, EntityFramework.
+  - Hands On Frontend Angular and the Student Entity.
   - Automatically Generating the Backend and Frontend code.
 - Like & Subscribe
 
