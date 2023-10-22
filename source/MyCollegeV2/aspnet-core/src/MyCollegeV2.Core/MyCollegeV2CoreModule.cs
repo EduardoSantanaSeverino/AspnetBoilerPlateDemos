@@ -35,9 +35,10 @@ namespace MyCollegeV2
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();
-            
-            Configuration.Localization.Languages.Add(new LanguageInfo("fa", "فارسی", "famfamfam-flags ir"));
-            
+
+            // Commenting this one because I dont need it. 
+            // Configuration.Localization.Languages.Add(new LanguageInfo("fa", "فارسی", "famfamfam-flags ir"));
+
             Configuration.Settings.SettingEncryptionConfiguration.DefaultPassPhrase = MyCollegeV2Consts.DefaultPassPhrase;
             SimpleStringCipher.DefaultPassPhrase = MyCollegeV2Consts.DefaultPassPhrase;
         }

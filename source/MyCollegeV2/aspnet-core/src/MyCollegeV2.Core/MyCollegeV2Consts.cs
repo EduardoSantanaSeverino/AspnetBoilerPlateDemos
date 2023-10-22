@@ -8,7 +8,7 @@ namespace MyCollegeV2
 
         public const string ConnectionStringName = "Default";
 
-        public const bool MultiTenancyEnabled = true;
+        public const bool MultiTenancyEnabled = false;
 
 
         /// <summary>
