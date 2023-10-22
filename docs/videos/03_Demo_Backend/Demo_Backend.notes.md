@@ -249,4 +249,5 @@ See you in the next one.
 - https://aspnetboilerplate.com/Pages/Documents/Background-Jobs-And-Workers
 - https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations#opting-out-of-the-new-timestamp-mapping-logic
 - https://aspnetboilerplate.com/Pages/Documents/SignalR-AspNetCore-Integration
-- https://support.aspnetzero.com/QA/Questions/10869/Disable-SignalR
+- https://aspnetboilerplate.com/Pages/Documents/Multi-Tenancy
+- https://aspnetboilerplate.com/Pages/Documents/Object-To-Object-Mapping
