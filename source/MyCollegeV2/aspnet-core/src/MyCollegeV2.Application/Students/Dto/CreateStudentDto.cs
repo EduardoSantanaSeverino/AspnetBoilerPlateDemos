@@ -5,7 +5,7 @@ using MyCollegeV2.Models;
 namespace MyCollegeV2.Students.Dto
 {
     [AutoMapTo(typeof(Student))]
-    public class CreateStudentDto : EntityDto<int>
+    public class CreateStudentDto
     {
 
         public string FirstName { get; set; }

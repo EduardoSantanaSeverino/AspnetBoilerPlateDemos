@@ -84,6 +84,18 @@ https://aspnetboilerplate.com/
 - Quick Overview of the Backend project.
 
   - Outcome preview: `MyCollegeV1` vs `MyCollegeV2`.
+  - Insert Entity:
+
+  ```json
+  {
+    "firstName": "Logan",
+    "lastName": "Kim",
+    "address": "941 Progress Ave, Scarborough, Ontario, Canada",
+    "programName": "Game Programming",
+    "doB": "1991-04-10",
+    "isActive": true
+  }
+  ```
 
 ---
 
