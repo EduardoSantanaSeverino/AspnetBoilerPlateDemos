@@ -343,8 +343,8 @@ https://aspnetboilerplate.com/
 
 - https://aspnetboilerplate.com/Pages/Documents/EF-Core-Oracle-Integration
 - https://aspnetboilerplate.com/Pages/Documents/EF-Core-PostgreSql-Integration
-- https://aspnetboilerplate.com/Pages/Documents/Background-Jobs-And-Workers
 - https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations#opting-out-of-the-new-timestamp-mapping-logic
+- https://aspnetboilerplate.com/Pages/Documents/Background-Jobs-And-Workers
 - https://aspnetboilerplate.com/Pages/Documents/SignalR-AspNetCore-Integration
 - https://aspnetboilerplate.com/Pages/Documents/Multi-Tenancy
 - https://aspnetboilerplate.com/Pages/Documents/Object-To-Object-Mapping
