@@ -99,12 +99,12 @@ Next slide:
 
 - Quick Overview of the Backend project.
 
-  - Outcome preview: `MyCollegeV1` vs `MyCollegeV2`
-  - Using Rider IDE for the Backend (`MyCollegeV2`)
-  - Solution explorer, using Domain Driven Design
-  - Entity Model for this demo at: `src/MyCollegeV2.Core/Models/Student.cs`
-  - With Service Class at: `src/MyCollegeV2.Application/Students/StudentAppService.cs`
-  - See the service in swagger, `GetAll` Students
+  - Outcome preview: `MyCollegeV1` vs `MyCollegeV2`.
+  - Using Rider IDE for the Backend (`MyCollegeV2`).
+  - Solution explorer, using Domain Driven Design.
+  - Entity Model for this demo at: `src/MyCollegeV2.Core/Models/Student.cs`.
+  - With Service Class at: `src/MyCollegeV2.Application/Students/StudentAppService.cs`.
+  - See the service in swagger, `GetAll` Students.
   - Insert Entity in swagger:
 
   ```json
