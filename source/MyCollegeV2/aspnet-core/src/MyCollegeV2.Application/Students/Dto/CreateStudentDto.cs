@@ -14,8 +14,7 @@ namespace MyCollegeV2.Students.Dto
         public string ProgramName { get; set; }
         public string DoB { get; set; }
         public bool IsActive { get; set; }
-///CreateDto.cs.fields1///
+        ///CreateDto.cs.fields1///
 
     }
 }
-

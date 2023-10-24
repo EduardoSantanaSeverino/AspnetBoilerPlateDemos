@@ -13,7 +13,7 @@ using MyCollegeV2.Models;
 namespace MyCollegeV2.Students
 {
 
-    // [AbpAuthorize(PermissionNames.Pages_Students)]
+    [AbpAuthorize(PermissionNames.Pages_Students)]
     public class StudentAppServiceV2 :
         AsyncCrudAppService<Student, StudentDto, int, PagedStudentResultRequestDto, CreateStudentDto, UpdateStudentDto>,
         IStudentAppService
