@@ -274,7 +274,7 @@ https://aspnetboilerplate.com/
 
     - Add: `context.CreatePermission(PermissionNames.Pages_Students, L("Students"));` below.
 
-  - Check the core module of your application, file: `source/MyCollegeV1/aspnet-core/src/MyCollegeV1.Core/MyCollegeV1CoreModule.cs`, in there probably remove the following line as it is not needed: `Configuration.Localization.Languages.Add(new LanguageInfo("fa", "فارسی", "famfamfam-flags ir"));`.
+  - Check the core module of your application, file: `src/MyCollegeV1.Core/MyCollegeV1CoreModule.cs`, in there probably remove the following line as it is not needed: `Configuration.Localization.Languages.Add(new LanguageInfo("fa", "فارسی", "famfamfam-flags ir"));`.
 
 ---
 
