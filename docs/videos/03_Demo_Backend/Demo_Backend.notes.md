@@ -99,7 +99,7 @@ Next slide:
 
 - Quick Overview of the Backend project.
 
-  - Outcome preview: `MyCollegeV1` vs `MyCollegeV2`.
+  - Outcome preview: `MyCollegeV1` vs `MyCollegeV2`
   - Using Rider IDE for the Backend (`MyCollegeV2`)
   - Solution explorer, using Domain Driven Design
   - Entity Model for this demo at: `src/MyCollegeV2.Core/Models/Student.cs`
