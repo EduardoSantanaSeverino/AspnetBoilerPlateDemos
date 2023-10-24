@@ -141,7 +141,6 @@ Follow the next steps...
   ```csharp
   public override void PreInitialize()
   {
-      Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
       System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
       System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
       // https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations
@@ -170,6 +169,9 @@ Follow the next steps...
   public override void PreInitialize()
   {
       Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
+      System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true); // From previous steps...
+      System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true); // From previous steps...
+      // https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations
   }
   ```
 
