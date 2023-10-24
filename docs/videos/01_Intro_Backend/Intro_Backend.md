@@ -15,14 +15,14 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Talking About**
+# Talking About
 
 1. Who is this framework for? Does it work for you?
 2. Important framework features for you.
 
 ---
 
-# **Best Practices**
+# Best Practices
 
 - Solid Principles
 - Domain Driven Design
@@ -30,7 +30,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Students/New Programmers**
+# Students/New Programmers
 
 - Struggle to create the new application.
 - Let's Make it simple with AspnetBoilerPlate template.
@@ -38,13 +38,13 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Rapid Application Development**
+# Rapid Application Development
 
 A top of the line dotnet rapid application framework to help you to your boost productivity and save time on delivering your next dotnet web application.
 
 ---
 
-# **AspnetBoilerPlate**
+# AspnetBoilerPlate
 
 Open source and well-documented application framework. It's not just a framework, it also provides a strong architectural model based on Domain Driven Design, with all the best practices in mind.
 
@@ -52,7 +52,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Quick View**
+# Quick View
 
 - Quick Google search . . .
 - https://www.google.com/search?q=AspnetBoilerPlate&rlz=1C5MACD_enCA1046CA1046&oq=AspnetBoilerPlate&aqs=chrome..69i57j69i59j69i65j69i60l3j69i65l2.1460j0j1&sourceid=chrome&ie=UTF-8#ip=1
@@ -72,7 +72,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Who is this for? On the Backend? - 2**
+# Who is this for? On the Backend? - 2
 
 - Automapper 12 for Automatic Dto mappings.
 - It is Migrated away from Castle Windsor.
@@ -80,7 +80,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Features? On the Backend? - 1**
+# Features? On the Backend? - 1
 
 - Repository: Create repository for each entity (such as IRepository<Task>) and Unit Of Work.
 - Authorization, login, register, user, role and tenant management pages.
@@ -88,7 +88,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Features? On the Backend? - 2**
+# Features? On the Backend? - 2
 
 - Caching out of the box with Caching Service for any Entity.
 - Data filters out of the box, like soft delete, and tenanted data.
@@ -96,13 +96,13 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Features? On the Backend? Example**
+# Features? On the Backend? Example
 
 - https://aspnetboilerplate.com/Pages/Documents/Introduction
 
 ---
 
-# **Thank you**
+# Thank you
 
 - Like & Subscribe
 - Next videos:
@@ -113,7 +113,7 @@ https://aspnetboilerplate.com/
 
 ---
 
-# **Links**
+# Links
 
 - https://www.google.com/search?q=AspnetBoilerPlate&rlz=1C5MACD_enCA1046CA1046&oq=AspnetBoilerPlate&aqs=chrome..69i57j69i59j69i65j69i60l3j69i65l2.1460j0j1&sourceid=chrome&ie=UTF-8#ip=1
 - https://www.youtube.com/watch?v=fboRUsd00N8&list=PLEqIq664dDRZ1ObTGKwkwUrrj5mT4pmv2

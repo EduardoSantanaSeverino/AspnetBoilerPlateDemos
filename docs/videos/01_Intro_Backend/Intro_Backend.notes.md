@@ -21,7 +21,7 @@ What they are going to do next?
 After this video there will be a coming video about the demonstration on how to create your new project using this framework.
 And also, how automatically generate some boiler plate. so stick around and If you finding value in this video, give it a thumbs-up. It really makes a huge difference.
 
-# **AspnetBoilerPlate**
+# AspnetBoilerPlate
 
 Welcome everyone, this is an introduction video to talk about what is AspnetBoilerPlate, who is it for
 
