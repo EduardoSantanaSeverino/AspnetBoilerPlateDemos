@@ -71,7 +71,9 @@ https://aspnetboilerplate.com/
 
 # Follow the next steps:
 
-Follow the next steps...
+- Follow the next steps...
+- Using `Command` + `P` on Mac shortcut.
+- Using `Control` + `P` on Windows shortcut.
 
 ---
 
