@@ -84,7 +84,12 @@ https://aspnetboilerplate.com/
 - Quick Overview of the Backend project.
 
   - Outcome preview: `MyCollegeV1` vs `MyCollegeV2`.
-  - Insert Entity:
+  - Using Rider IDE for the Backend (`MyCollegeV2`)
+  - Solution explorer, using Domain Driven Design
+  - Entity Model for this demo at: `src/MyCollegeV2.Core/Models/Student.cs`
+  - With Service Class at: `src/MyCollegeV2.Application/Students/StudentAppService.cs`
+  - See the service in swagger, `GetAll` Students
+  - Insert Entity in swagger:
 
   ```json
   {
@@ -181,6 +186,8 @@ https://aspnetboilerplate.com/
 # Follow Step 7:
 
 - Disable SignalR feature:
+
+  Note: SignalR is used by several features like Chat and Real Time Notifications. We are not going to used it for the moment, therefore commenting out the line of code that we dont need.
 
   - Open file: `src/MyCollegeV1.Web.Core/MyCollegeV1.Web.Core.csproj`:
     - Comment out the `<PackageReference Include="Abp.AspNetCore.SignalR" Version="8.1.0" />` line.
