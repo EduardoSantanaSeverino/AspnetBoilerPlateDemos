@@ -107,8 +107,8 @@ https://aspnetboilerplate.com/
 - Like & Subscribe
 - Next videos:
   - Frontend Intro and Features.
-  - Hands On Backend using PostgreSQL, Swagger, EntityFramework.
-  - Hands On Frontend Angular and the Student Entity.
+  - Hands-on Backend using PostgreSQL, Swagger, EntityFramework.
+  - Hands-on Frontend Angular and the Student Entity.
   - Automatically Generating the Backend and Frontend code.
 
 ---

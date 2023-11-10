@@ -327,7 +327,7 @@ Note: SignalR is used by several features like Chat and Real Time Notifications.
 # Thank you
 
 - Next videos:
-  - Hands On Frontend Angular and the Student Entity.
+  - Hands-on Frontend Angular and the Student Entity.
   - Automatically Generating the Backend and Frontend code.
 - Like & Subscribe
 
