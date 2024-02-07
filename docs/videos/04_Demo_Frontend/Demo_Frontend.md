@@ -53,17 +53,24 @@ https://aspnetboilerplate.com/
 
 # 1. Start/Connect to previous Backend:
 
-- Download the code: https://github.com/EduardoSantanaSeverino/AspnetBoilerPlateDemos
+- Download the code: `https://github.com/EduardoSantanaSeverino/AspnetBoilerPlateDemos`.
+- Start the DB container, with docker compose file: `scripts/db/docker-compose.yml` (Add your `.env` file).
+- For me execute: `docker-compose up -d`, for you probably `docker compose up -d` (Already have my `.env` file).
+- Going to: `http://192.168.22.101:5050/`.
+- Check database.
 - Start the `source/MyCollegeV2/aspnet-core/src/MyCollegeV2.Web.Host/MyCollegeV2.Web.Host.csproj` project file.
+- cd `source/MyCollegeV2/aspnet-core/src/MyCollegeV2.Web.Host/`.
+- Execute: `dotnet run`.
 - Show Swagger Page.
 
 ---
 
 # 2. Install/Start and start Angular project:
 
-- Verify your npm version
-- Run `yarm install`.
-- Run `yarm run start`.
+- Verify your npm version, execute: `node -v ; npm -v ; yarn -v;`.
+- cd into: `cd source/MyCollegeV2/angular`.
+- Run `yarn install`.
+- Run `yarn run start`.
 - Login with the username as: `admin` and password as: `123qwe`.
 - Landing in default page.
 
