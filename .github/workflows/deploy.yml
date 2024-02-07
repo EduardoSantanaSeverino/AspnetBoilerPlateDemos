@@ -23,6 +23,7 @@ jobs:
       - run: npx @marp-team/marp-cli@3.3.1 docs/videos/01_Intro_Backend/Intro_Backend.md -o docs/videos/01_Intro_Backend/index.html
       - run: npx @marp-team/marp-cli@3.3.1 docs/videos/02_Intro_Frontend/Intro_Frontend.md -o docs/videos/02_Intro_Frontend/index.html
       - run: npx @marp-team/marp-cli@3.3.1 docs/videos/03_Demo_Backend/Demo_Backend.md -o docs/videos/03_Demo_Backend/index.html
+      - run: npx @marp-team/marp-cli@3.3.1 docs/videos/04_Demo_Frontend/Demo_Frontend.md -o docs/videos/04_Demo_Frontend/index.html
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v4
         with:
