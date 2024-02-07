@@ -1,0 +1,159 @@
+<form
+        class="form-horizontal"
+        autocomplete="off"
+        #editStudentForm="ngForm"
+        (ngSubmit)="save()"
+>
+  <abp-modal-header
+          [title]="'EditStudent' | localize"
+          (onCloseClick)="bsModalRef.hide()"
+  ></abp-modal-header>
+  <div class="modal-body">
+
+    <div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="firstName">
+        {{ "FirstName" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="firstName"
+            id="firstName"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="student.firstName"
+            #firstNameModel="ngModel"
+            #firstNameEl
+        />
+        <abp-validation-summary
+                [control]="firstNameModel"
+                [controlEl]="firstNameEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="lastName">
+        {{ "LastName" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="lastName"
+            id="lastName"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="student.lastName"
+            #lastNameModel="ngModel"
+            #lastNameEl
+        />
+        <abp-validation-summary
+                [control]="lastNameModel"
+                [controlEl]="lastNameEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="address">
+        {{ "Address" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="address"
+            id="address"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="student.address"
+            #addressModel="ngModel"
+            #addressEl
+        />
+        <abp-validation-summary
+                [control]="addressModel"
+                [controlEl]="addressEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="programName">
+        {{ "ProgramName" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="programName"
+            id="programName"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="student.programName"
+            #programNameModel="ngModel"
+            #programNameEl
+        />
+        <abp-validation-summary
+                [control]="programNameModel"
+                [controlEl]="programNameEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="doB">
+        {{ "DoB" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="doB"
+            id="doB"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="student.doB"
+            #doBModel="ngModel"
+            #doBEl
+        />
+        <abp-validation-summary
+                [control]="doBModel"
+                [controlEl]="doBEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<!--edit-dialog.component.html.fields1-->
+    
+    <div class="form-group row mb-0">
+      <label class="col-md-3 col-form-label">
+        {{ "IsActive" | localize }}
+      </label>
+      <div class="col-md-9">
+        <div class="custom-control custom-checkbox">
+          <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  name="isActive"
+                  id="isActive"
+                  [(ngModel)]="student.isActive"
+          />
+          <label class="custom-control-label mt-2" for="isActive"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <abp-modal-footer
+          [cancelDisabled]="saving"
+          [saveDisabled]="!editStudentForm.form.valid || saving"
+          (onCancelClick)="bsModalRef.hide()"
+  ></abp-modal-footer>
+</form>
+
