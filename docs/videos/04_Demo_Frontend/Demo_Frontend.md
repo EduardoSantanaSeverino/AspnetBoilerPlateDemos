@@ -24,16 +24,6 @@ https://aspnetboilerplate.com/
 
 ---
 
-# Technology / Topics
-
-- MS SQL Server or PostgreSQL
-- EntityFramework
-- Swagger
-- C# Class, Interface, Inheritance, Dependency Injection
-- Docker Container
-
----
-
 # Frontend Features
 
 - Authorization and Authentication
