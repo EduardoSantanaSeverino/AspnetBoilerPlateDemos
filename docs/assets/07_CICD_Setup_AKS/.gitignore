@@ -1,0 +1,10 @@
+.terraform/
+terraform.tfvars
+kubeconfig
+terraform.tfstate
+terraform.tfstate.*
+.terraform.tfstate
+.terraform.tfstate.*
+
+.DS_Store
+temp/*

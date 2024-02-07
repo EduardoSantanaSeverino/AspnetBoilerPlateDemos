@@ -1,0 +1,4 @@
+Congratulations ! You installed {{ .Chart.Name }} chart sucessfully.
+Release name is {{ .Release.Name }}
+You can access the Guestbook application at the following urls : http://{{ include "default.domain" . }}
+Have fun !

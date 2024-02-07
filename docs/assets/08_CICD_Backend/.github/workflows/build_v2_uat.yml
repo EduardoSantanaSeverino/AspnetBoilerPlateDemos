@@ -1,0 +1,131 @@
+name: Build Backend UAT
+on:
+  push:
+    branches: [ uat ]
+
+# Ensures that only one deploy task per branch/environment will run at a time.
+concurrency:
+  group: deploy-aks-cluster
+  # group: environment-${{ github.ref }}
+
+env:
+  DOCKER_IMAGE_NAME: "other_back_end"
+  FILE_WITH_VERSION: "./OtherBackend/appsettings.json"
+  # Token such as GITHUB_TOKEN that has `write:packages` scope to authenticate against ghcr.
+  CONTAINER_REGISTRY_TOKEN: ${{ secrets.CONTAINER_REGISTRY_TOKEN }}
+  KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+  HELM_CHARTS_FOLDER: "./.cicd/helm-charts/v2"
+  HELM_CHARTS_VALUES: "./.cicd/helm-charts/values/uat.values.yaml"
+  HELM_CHARTS_NAME: "uat"
+  ALLOWED_IP: "99.239.211.251/32"
+
+jobs:
+
+  create-release:
+    name: Create Release and Tag Number
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version_number.outputs.version }}
+    steps:
+      - name: Set Time Zone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "America/Toronto"
+      - name: Generate Version Number
+        run: |
+          echo "CUSTOMED_VERSION_NUMBER=v$(date +"%Y%m%d_%H%M")" >> $GITHUB_ENV
+      - name: Version Number Output
+        id: version_number 
+        run: |
+          echo "Printing Customed Version Value: ${{ env.CUSTOMED_VERSION_NUMBER }}"
+          echo "::set-output name=version::${{ env.CUSTOMED_VERSION_NUMBER }}"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with: 
+          token: ${{ secrets.CONTAINER_REGISTRY_TOKEN }}
+          tag_name: ${{ env.CUSTOMED_VERSION_NUMBER }}
+
+  build:
+    name: Build Backend
+    runs-on: ubuntu-latest
+    needs: create-release
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update the version file inside the repo
+      run: | 
+        sed -i "s/VERSION_PLACE_HOLDER/${{ needs.create-release.outputs.version }}/g" ${{ env.FILE_WITH_VERSION }}
+        cat ${{ env.FILE_WITH_VERSION }}
+    - name: Remove Migration Files
+      run: | 
+        rm -rf ./OtherBackend/Migrations
+    - name: Build and Push
+      run: | 
+        echo "Build"
+        echo "docker build --target testrunner -t other-backend-tests ."
+        docker build --target testrunner -t other-backend-tests .
+        echo "Test"
+        echo "docker run --name other-backend-tests other-backend-tests"
+        docker run --name other-backend-tests other-backend-tests
+        echo "Build for Push"
+        IMAGE_ID=ghcr.io/${{ github.repository }}:${{ needs.create-release.outputs.version }}
+        IMAGE_ID=$(echo ${IMAGE_ID} | tr '[A-Z]' '[a-z]')
+        echo "docker build --target runtime -t ${IMAGE_ID} ."
+        docker build --target runtime -t ${IMAGE_ID} .
+        echo "Push Image"
+        echo "Actor: ${{ github.actor }}"
+        docker login https://ghcr.io --username '${{ github.actor }}' --password '${{ env.CONTAINER_REGISTRY_TOKEN }}'
+        docker push ${IMAGE_ID}
+  
+  deploy:
+    name: Deploy Kubernetes Cluster
+    runs-on: ubuntu-latest
+    needs: [ create-release, build ]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Whitelist GitHub Runner IP
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          set -eu
+          agentIP="$(curl -s https://api.ipify.org/)/32"
+          echo "My Current IP is: $agentIP"
+          az aks update \
+            --resource-group other-rg \
+            --name other-aks \
+            --api-server-authorized-ip-ranges "$agentIP,${{ env.ALLOWED_IP }}"
+          sleep 90
+
+    - name: Deploy to Kubernetes Cluster
+      uses: wahyd4/kubectl-helm-action@master
+      env:
+        KUBE_CONFIG_DATA: ${{ env.KUBE_CONFIG_DATA }}
+      with:
+        args: |
+          HELM_CHARTS_NAME="${{ env.HELM_CHARTS_NAME }}"
+          HELM_CHARTS_VALUES="${{ env.HELM_CHARTS_VALUES }}"
+          HELM_CHARTS_FOLDER="${{ env.HELM_CHARTS_FOLDER }}"
+          DOCKER_IMAGE_NAME="${{ env.DOCKER_IMAGE_NAME }}"
+          NAMESPACE="$HELM_CHARTS_NAME-${DOCKER_IMAGE_NAME//_/-}"
+          ImageTag="${{ needs.create-release.outputs.version }}"
+          ImageCredentialsUsername="${{ github.actor }}"
+          ImageCredentialsPassword="${{ env.CONTAINER_REGISTRY_TOKEN }}"
+          helm upgrade $HELM_CHARTS_NAME $HELM_CHARTS_FOLDER \
+              --create-namespace \
+              -n $NAMESPACE \
+              --install \
+              --atomic \
+              --set image.tag=$ImageTag \
+              --set image.credentials.username=$ImageCredentialsUsername \
+              --set image.credentials.password=$ImageCredentialsPassword \
+              -f $HELM_CHARTS_VALUES
+
+    - name: logout
+      if: always()
+      run: |
+        az logout

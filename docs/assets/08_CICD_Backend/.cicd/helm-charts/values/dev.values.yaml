@@ -1,0 +1,24 @@
+# Default values for this helm chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicas: 1
+image:
+  registry: "ghcr.io"
+  repository: "user/repository"
+  tag: "v20230616_1926"
+  credentials: 
+    username: someone
+    password: sillyness
+
+domain: "other-dev.work"
+
+environments:
+  - name: "ConnectionStrings__Connection"
+    value: "Server=tcp:mssql-latest-deploy.sql-data.svc.cluster.local,1433;Initial Catalog=other-dev-database;Persist Security Info=False;User ID=OtherDbUserDev;Password=abc;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
+  - name: "BaseUrl"
+    value: "https://dev.other-dev.work"
+  - name: "TZ"
+    value: "America/Toronto"
+
+isReleaseDomain: true

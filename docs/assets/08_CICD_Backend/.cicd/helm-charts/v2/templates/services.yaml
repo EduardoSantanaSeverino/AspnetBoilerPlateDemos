@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "default.name" . }}
+  namespace: {{ include "default.name" . }}
+spec:
+  selector:
+    app: {{ include "default.name" . }}
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP # LoadBalancer # NodePort #  ClusterIP

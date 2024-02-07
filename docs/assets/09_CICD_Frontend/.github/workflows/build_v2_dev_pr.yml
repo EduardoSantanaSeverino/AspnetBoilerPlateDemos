@@ -1,0 +1,32 @@
+name: Build Web Develop - Pull Request
+on:
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - develop
+      - uat
+      - prod
+
+jobs:
+
+  build:
+    name: Build Web
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: "Build for Testing"
+      run: | 
+        echo "Build"
+        echo "docker build  --target testrunner -t other-frontend-tests ."
+        docker build  --target testrunner -f Dockerfile.dev -t other-frontend-tests .
+        echo "Test"
+        echo "docker run --name other-frontend-tests other-frontend-tests"
+        docker run --name other-frontend-tests other-frontend-tests
+        echo "Build for Testing"
+        IMAGE_ID=ghcr.io/${{ github.repository }}:PULL_REQUEST
+        IMAGE_ID=$(echo ${IMAGE_ID} | tr '[A-Z]' '[a-z]')
+        echo "docker build  --target runtime -f Dockerfile.dev -t ${IMAGE_ID} ."
+        docker build  --target runtime -f Dockerfile.dev -t ${IMAGE_ID} .

@@ -1,0 +1,22 @@
+# Default values for this helm chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicas: 1
+image:
+  registry: "ghcr.io"
+  repository: "otherweb/other_web"
+  tag: "v20230616_1926"
+  credentials: 
+    username: someone
+    password: sillyness
+
+domain: "other-dev.work"
+
+environments:
+  - name: "baseUrl"
+    value: "https://api-dev.other-dev.work"
+  - name: "apiEnv"
+    value: "dev"
+
+isReleaseDomain: true

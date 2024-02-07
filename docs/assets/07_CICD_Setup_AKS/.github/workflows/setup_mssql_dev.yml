@@ -1,0 +1,71 @@
+name: Setup MS SQL Server
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "helm-charts/sql-server/v1/**"
+      - ".github/workflows/setup_mssql_dev.yml"
+
+env:
+  KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+  HELM_CHARTS_FOLDER: "./helm-charts/sql-server/v1"
+  MSSQL_SA_PASSWORD: ${{ secrets.MSSQL_SA_PASSWORD }}
+  ALLOWED_IP: "YOUR_PUBLIC_IPV4_IP/32"
+  
+jobs:
+
+  deploy:
+  
+    name: Deploy Kubernetes Cluster
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v2
+    - uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Whitelist GitHub Runner IP
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          set -eu
+          agentIP="$(curl -s https://api.ipify.org/)/32"
+          echo "My Current IP is: $agentIP"
+          az aks update \
+            --resource-group your-resource-group \
+            --name your-aks-name \
+            --api-server-authorized-ip-ranges "$agentIP,${{ env.ALLOWED_IP }}"
+          sleep 120
+ 
+    - uses: actions/checkout@v2
+    - name: Deploy to Kubernetes Cluster
+      uses: wahyd4/kubectl-helm-action@master
+      env:
+        KUBE_CONFIG_DATA: ${{ env.KUBE_CONFIG_DATA }}
+      with:
+        args: |
+          HELM_CHARTS_NAME="mssql-latest-deploy"
+          HELM_CHARTS_FOLDER="${{ env.HELM_CHARTS_FOLDER }}"
+          NAMESPACE="default"
+          MSSQL_SA_PASSWORD="${{ env.MSSQL_SA_PASSWORD }}"
+          helm upgrade $HELM_CHARTS_NAME $HELM_CHARTS_FOLDER \
+              -n $NAMESPACE \
+              --install \
+              --atomic \
+              --set sa_password=$MSSQL_SA_PASSWORD
+
+    - name: Whitelist Allowed IP
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          set -eu
+          az aks update \
+            --resource-group your-resource-group \
+            --name your-aks-name \
+            --api-server-authorized-ip-ranges "${{ env.ALLOWED_IP }}"
+
+    - name: logout
+      if: always()
+      run: |
+        az logout

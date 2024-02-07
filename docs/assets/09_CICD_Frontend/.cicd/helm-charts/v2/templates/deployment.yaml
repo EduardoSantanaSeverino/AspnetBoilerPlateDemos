@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "default.name" . }}
+  namespace: {{ include "default.name" . }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "default.name" . }}
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "default.name" . }}
+    spec:
+      containers:
+      - name: {{ include "default.name" . }}-container
+        image: {{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: Always
+        env:
+{{- range .Values.environments }}
+          - name: {{ .name }}
+            value: "{{ .value }}"
+{{- end }}
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: {{ include "default.name" . }}-github-secret

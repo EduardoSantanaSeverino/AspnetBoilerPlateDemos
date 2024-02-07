@@ -1,0 +1,35 @@
+name: Build Backend Develop - Pull Request
+on:
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - develop
+      - uat
+      - prod
+
+jobs:
+
+  build:
+    name: Build Backend
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Remove Migration Files
+      run: | 
+        rm -rf ./OtherBackend/Migrations
+    - name: Build and Test
+      run: | 
+        echo "Build"
+        echo "docker build --target testrunner -t other-backend-tests ."
+        docker build --target testrunner -t other-backend-tests .
+        echo "Test"
+        echo "docker run --name other-backend-tests other-backend-tests"
+        docker run --name other-backend-tests other-backend-tests
+        echo "Build for Push"
+        IMAGE_ID=ghcr.io/${{ github.repository }}:test
+        IMAGE_ID=$(echo ${IMAGE_ID} | tr '[A-Z]' '[a-z]')
+        echo "docker build --target runtime -t ${IMAGE_ID} ."
+        docker build --target runtime -t ${IMAGE_ID} .

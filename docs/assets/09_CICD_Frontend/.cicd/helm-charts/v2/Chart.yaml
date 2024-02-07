@@ -1,0 +1,6 @@
+apiVersion: v2
+name: other-web
+description: A Helm chart for other-web
+type: application
+version: 2.0.0
+appVersion: 2.0.0
