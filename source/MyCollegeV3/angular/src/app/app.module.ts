@@ -38,11 +38,6 @@ import { SidebarComponent } from './layout/sidebar.component';
 import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
-// students
-import { StudentsComponent } from '@app/students/students.component';
-import { CreateStudentDialogComponent } from './students/create-student/create-student-dialog.component';
-import { EditStudentDialogComponent } from './students/edit-student/edit-student-dialog.component';
-///app.module.ts.place1///
 
 @NgModule({
     declarations: [
@@ -73,11 +68,6 @@ import { EditStudentDialogComponent } from './students/edit-student/edit-student
         SidebarLogoComponent,
         SidebarUserPanelComponent,
         SidebarMenuComponent
-        // students
-        ,StudentsComponent
-        ,CreateStudentDialogComponent
-        ,EditStudentDialogComponent
-///app.module.ts.place2///
     ],
     imports: [
         CommonModule,
@@ -97,4 +87,3 @@ import { EditStudentDialogComponent } from './students/edit-student/edit-student
     providers: []
 })
 export class AppModule {}
-

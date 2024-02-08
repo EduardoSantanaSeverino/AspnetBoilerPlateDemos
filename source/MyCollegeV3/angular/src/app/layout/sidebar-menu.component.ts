@@ -114,13 +114,6 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
                     )
                 ])
             ])
-           ,new MenuItem(
-               this.l('Students'),
-               '/app/students',
-               'fas fa-building',
-               'Pages.Students'
-           )
-///sidebar-menu.component.ts.place1///
         ];
     }
 
@@ -191,4 +184,3 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
         return this.permission.isGranted(item.permissionName);
     }
 }
-

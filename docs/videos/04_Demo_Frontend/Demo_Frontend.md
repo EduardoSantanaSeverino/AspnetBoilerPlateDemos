@@ -39,7 +39,10 @@ https://aspnetboilerplate.com/
 3. View the User feature
 4. View the User Roles feature
 5. Update the NSwag
-6. Add the student page
+6. Add Student CRUD files
+7. Add Student to NgModule
+8. Add Student to Routing
+9. Add Student to Menu
 
 ---
 
@@ -58,8 +61,8 @@ https://aspnetboilerplate.com/
 - For me execute: `docker-compose up -d`, for you probably `docker compose up -d` (Already have my `.env` file).
 - Going to: `http://192.168.22.101:5050/`.
 - Check database.
-- Start the `source/MyCollegeV2/aspnet-core/src/MyCollegeV2.Web.Host/MyCollegeV2.Web.Host.csproj` project file.
-- cd `source/MyCollegeV2/aspnet-core/src/MyCollegeV2.Web.Host/`.
+- Start the `source/MyCollegeV3/aspnet-core/src/MyCollegeV2.Web.Host/MyCollegeV2.Web.Host.csproj` project file.
+- cd `source/MyCollegeV3/aspnet-core/src/MyCollegeV2.Web.Host/`.
 - Execute: `dotnet run`.
 - Show Swagger Page.
 
@@ -68,7 +71,8 @@ https://aspnetboilerplate.com/
 # 2. Install/Start and start Angular project:
 
 - Verify your npm version, execute: `node -v ; npm -v ; yarn -v;`.
-- cd into: `cd source/MyCollegeV2/angular`.
+- cd into: `cd source/MyCollegeV3/angular`.
+- update the file: `source/MyCollegeV3/angular/src/assets/appconfig.json` to remove the `s` in `https`, it should look like: `"remoteServiceBaseUrl": "http://localhost:44311",`.
 - Run `yarn install`.
 - Run `yarn run start`.
 - Login with the username as: `admin` and password as: `123qwe`.
@@ -93,18 +97,84 @@ https://aspnetboilerplate.com/
 # 5. Update the NSwag:
 
 - if it is running, stop the project.
-- Update the settings for NSwag.
-- Run script `nswag\refresh` to update the definitions.
-- view the updated files.
-- Run the project.
+- Update the settings for NSwag: `source/MyCollegeV3/angular/nswag/service.config.nswag`.
+  - Remove the `s` in `https`, it should look like: `"url": "http://localhost:44311/swagger/v1/swagger.json",`.
+- To update the proxy definitions cd into: `source/MyCollegeV3/angular/nswag/`, then:
+  - For `mac/linux` run `refresh.sh` script.
+  - For `windows` run `refresh.bat` script.
+- View the updated file: `source/MyCollegeV3/angular/src/shared/service-proxies/service-proxies.ts` where the `StudentServiceProxy` was added.
+- Add the new class `ApiServiceProxies.StudentServiceProxy` to `source/MyCollegeV3/angular/src/shared/service-proxies/service-proxy.module.ts` file in the provider section:
+  - Example: `,ApiServiceProxies.StudentServiceProxy`.
+- Run the project with `yarn run start`, make sure it compiles the code.
 
 ---
 
-# 6. Add the student page:
+# 6. Add Student CRUD files:
 
 - if it is running, stop the project.
-- add the student files.
-- Run the project.
+- For adding the student files, I m taking the original files from `source/MyCollegeV3/angular/src/app/roles` folder, doing a find and replace `role` to my new entity `student`. The following files will be added:
+  - `source/MyCollegeV3/angular/src/app/students/students.component.html`
+  - `source/MyCollegeV3/angular/src/app/students/students.component.ts`
+  - `source/MyCollegeV3/angular/src/app/students/create-student/create-student-dialog.component.html`
+  - `source/MyCollegeV3/angular/src/app/students/create-student/create-student-dialog.component.ts`
+  - `source/MyCollegeV3/angular/src/app/students/edit-student/edit-student-dialog.component.html`
+  - `source/MyCollegeV3/angular/src/app/students/edit-student/edit-student-dialog.component.ts`
+- Run the project with `yarn run start`, make sure it compiles the code.
+
+---
+
+# 7. Add Student to NgModule:
+
+- if it is running, stop the project.
+- For adding the student to the NgModule declarations section in file: `source/MyCollegeV3/angular/src/app/app.module.ts`, do the following:
+- Add the following to `import` section:
+  ```
+  // students
+  import { StudentsComponent } from '@app/students/students.component';
+  import { CreateStudentDialogComponent } from './students/create-student/create-student-dialog.component';
+  import { EditStudentDialogComponent } from './students/edit-student/edit-student-dialog.component';
+  ```
+- Add the following to `declarations` section:
+  ```
+  // students
+  ,StudentsComponent
+  ,CreateStudentDialogComponent
+  ,EditStudentDialogComponent
+  ```
+- Run the project with `yarn run start`, make sure it compiles the code.
+
+---
+
+# 8. Add Student to Routing:
+
+- if it is running, stop the project.
+- For adding the student routing in file: `source/MyCollegeV3/angular/src/app/app-routing.module.ts`, do the following:
+- Add the following to `import` section:
+  ```
+  import { StudentsComponent } from 'app/students/students.component';
+  ```
+- Add the following to `RouterModule.forChild` section:
+  ```
+  ,{ path: 'students', component: StudentsComponent, data: { permission: 'Pages.Students' }, canActivate: [AppRouteGuard] }
+  ```
+- Run the project with `yarn run start`, make sure it compiles the code.
+
+---
+
+# 9. Add Student to Menu:
+
+- if it is running, stop the project.
+- For adding the student to menu in file: `source/MyCollegeV3/angular/src/app/layout/sidebar-menu.component.ts`, do the following:
+- Add the following to `getMenuItems(): MenuItem[]` section:
+  ```
+  ,new MenuItem(
+      this.l('Students'),
+      '/app/students',
+      'fas fa-building',
+      'Pages.Students'
+  )
+  ```
+- Run the project, make sure it compile the source code.
 
 ---
 
@@ -118,10 +188,4 @@ https://aspnetboilerplate.com/
 
 # Links
 
-- https://aspnetboilerplate.com/Pages/Documents/EF-Core-Oracle-Integration
-- https://aspnetboilerplate.com/Pages/Documents/EF-Core-PostgreSql-Integration
-- https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations#opting-out-of-the-new-timestamp-mapping-logic
-- https://aspnetboilerplate.com/Pages/Documents/Background-Jobs-And-Workers
-- https://aspnetboilerplate.com/Pages/Documents/SignalR-AspNetCore-Integration
-- https://aspnetboilerplate.com/Pages/Documents/Multi-Tenancy
-- https://aspnetboilerplate.com/Pages/Documents/Object-To-Object-Mapping
+- https://github.com/EduardoSantanaSeverino/AspnetBoilerPlateDemos

@@ -8,8 +8,6 @@ import { UsersComponent } from './users/users.component';
 import { TenantsComponent } from './tenants/tenants.component';
 import { RolesComponent } from 'app/roles/roles.component';
 import { ChangePasswordComponent } from './users/change-password/change-password.component';
-import { StudentsComponent } from 'app/students/students.component';
-///app-routing.module.ts.place1///
 
 @NgModule({
     imports: [
@@ -24,8 +22,6 @@ import { StudentsComponent } from 'app/students/students.component';
                     { path: 'tenants', component: TenantsComponent, data: { permission: 'Pages.Tenants' }, canActivate: [AppRouteGuard] },
                     { path: 'about', component: AboutComponent, canActivate: [AppRouteGuard] },
                     { path: 'update-password', component: ChangePasswordComponent, canActivate: [AppRouteGuard] }
-                    ,{ path: 'students', component: StudentsComponent, data: { permission: 'Pages.Students' }, canActivate: [AppRouteGuard] }
-///app-routing.module.ts.place2///
                 ]
             }
         ])
@@ -33,4 +29,3 @@ import { StudentsComponent } from 'app/students/students.component';
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
