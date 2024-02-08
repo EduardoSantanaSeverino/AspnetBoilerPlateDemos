@@ -189,3 +189,5 @@ https://aspnetboilerplate.com/
 # Links
 
 - https://github.com/EduardoSantanaSeverino/AspnetBoilerPlateDemos
+- https://eduardosantanaseverino.github.io/AspnetBoilerPlateDemos/04_Demo_Frontend
+- https://eduardosantanaseverino.github.io/AspnetBoilerPlateDemos/04_Demo_Frontend/Demo_Frontend
